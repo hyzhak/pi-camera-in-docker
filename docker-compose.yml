@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  camera:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /run/udev:/run/udev:ro
+    ports:
+      - "8000:8000"
+    restart: always
+    privileged: true

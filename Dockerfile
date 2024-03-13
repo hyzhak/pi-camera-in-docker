@@ -1,8 +1,8 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 RUN apt update && apt install -y --no-install-recommends gnupg
 
-RUN echo "deb http://archive.raspberrypi.org/debian/ bullseye main" > /etc/apt/sources.list.d/raspi.list \
+RUN echo "deb http://archive.raspberrypi.org/debian/ bookworm main" > /etc/apt/sources.list.d/raspi.list \
   && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 82B129927FA3303E
 
 RUN apt update && apt -y upgrade

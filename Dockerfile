@@ -25,7 +25,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# TODO: fix issue with "--break-system-packages" flag
+RUN pip install --break-system-packages --no-cache-dir -r requirements.txt
 
 # Copy the Python files
 COPY pi_camera_in_docker /app/pi_camera_in_docker
